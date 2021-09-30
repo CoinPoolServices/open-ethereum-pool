@@ -86,14 +86,23 @@ In new console window run this commands:
     chmod +x ./build/env.sh
     add-apt-repository ppa:longsleep/golang-backports
     apt update
-    apt install golang-go
+    wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+    sudo tar -xvf go1.13.linux-amd64.tar.gz
+    sudo mv go /usr/local
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+    source ~/.profile
     make
     add-apt-repository ppa:chris-lea/redis-server
     apt update
     apt install redis-server
     systemctl enable redis-server.service && systemctl stop redis-server.service && systemctl start redis-server.service
 
-    curl -sL https://deb.nodesource.com/setup_13.x | bash -
+    apt-get update; apt-get install libgnutls30
+    sudo apt-get install -y nodejs
+    sudo apt-get update && sudo apt-get install yarn
+    curl -sL https://deb.nodesource.com/setup_14.x | bash -
     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
