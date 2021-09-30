@@ -81,7 +81,7 @@ In new console window run this commands:
     sudo su
     cd /pool
     git config --global http.https://gopkg.in.followRedirects true
-    git clone https://github.com/notminerproduction/open-ethereum-pool.git
+    git clone https://github.com/CoinPoolServices/open-ethereum-pool.git
     cd open-ethereum-pool
     chmod +x ./build/env.sh
     add-apt-repository ppa:longsleep/golang-backports

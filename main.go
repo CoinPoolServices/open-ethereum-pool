@@ -11,11 +11,11 @@ import (
 
 	"github.com/yvasiyarov/gorelic"
 
-	"github.com/techievee/ethash-mining-pool/api"
-	"github.com/techievee/ethash-mining-pool/exchange"
-	"github.com/techievee/ethash-mining-pool/payouts"
-	"github.com/techievee/ethash-mining-pool/proxy"
-	"github.com/techievee/ethash-mining-pool/storage"
+	"github.com/CoinPoolServices/open-mining-pool/api"
+	"github.com/CoinPoolServices/open-mining-pool/exchange"
+	"github.com/CoinPoolServices/open-mining-pool/payouts"
+	"github.com/CoinPoolServices/open-mining-pool/proxy"
+	"github.com/CoinPoolServices/open-mining-pool/storage"
 )
 
 var cfg proxy.Config

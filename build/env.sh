@@ -10,8 +10,8 @@ fi
 # Create fake Go workspace if it doesn't exist yet.
 workspace="$PWD/build/_workspace"
 root="$PWD"
-ethdir="$workspace/src/github.com/techievee"
-if [ ! -L "$ethdir/ethash-mining-pool" ]; then
+ethdir="$workspace/src/github.com/CoinPoolServices" 
+if [ ! -L "$ethdir/open-mining-pool" ]; then
     mkdir -p "$ethdir"
     cd "$ethdir"
     ln -s ../../../../../. ethash-mining-pool
@@ -25,8 +25,9 @@ GOBIN="$PWD/build/bin"
 export GOPATH GOBIN
 
 # Run the command inside the workspace.
-cd "$ethdir/ethash-mining-pool"
-PWD="$ethdir/ethash-mining-pool"
+cd "$ethdir/open-mining-pool"
+PWD="$ethdir/open-mining-pool"
 
 # Launch the arguments with the configured environment.
 exec "$@"
+m
