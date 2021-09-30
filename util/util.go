@@ -39,7 +39,7 @@ func GetTargetHex(diff int64) string {
 }
 
 func TargetHexToDiff(targetHex string) *big.Int {
-	targetBytes := common.FromHex(targetHex)
+	targetBytes := hexutil.Encode(targetHex)
 	return new(big.Int).Div(pow256, new(big.Int).SetBytes(targetBytes))
 }
 
