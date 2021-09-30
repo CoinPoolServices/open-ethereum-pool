@@ -9,8 +9,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/techievee/ethash-mining-pool/rpc"
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/CoinPoolServices/open-ethereum-pool/rpc"
+	"github.com/CoinPoolServices/open-ethereum-pool/util"
 )
 
 const maxBacklog = 3

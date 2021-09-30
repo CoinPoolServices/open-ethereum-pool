@@ -2,7 +2,7 @@
 Highly Efficient mining pool designed for ETC coin
 
 
-![alt text](https://raw.githubusercontent.com/techievee/ethash-mining-pool/master/images/FrontEnd.png)
+![alt text](https://raw.githubusercontent.com/techievee/open-ethereum-pool/master/images/FrontEnd.png)
 
 ### Features
 
@@ -136,7 +136,7 @@ Then run this commands:
     cd ../
     cp misc/nginx-default.conf /etc/nginx/sites-available/default
     systemctl enable nginx.service && systemctl stop nginx.service && systemctl start nginx.service
-    screen -S pool ./build/bin/ethash-mining-pool config_api.json
+    screen -S pool ./build/bin/open-ethereum-pool config_api.json
     
 
 

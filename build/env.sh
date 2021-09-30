@@ -14,7 +14,7 @@ ethdir="$workspace/src/github.com/CoinPoolServices"
 if [ ! -L "$ethdir/open-ethereum-pool" ]; then
     mkdir -p "$ethdir"
     cd "$ethdir"
-    ln -s ../../../../../. ethash-mining-pool
+    ln -s ../../../../../. open-ethereum-pool
     cd "$root"
 fi
 

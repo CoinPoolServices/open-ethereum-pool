@@ -12,8 +12,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/techievee/ethash-mining-pool/storage"
-	"github.com/techievee/ethash-mining-pool/util"
+	"github.com/CoinPoolServices/open-ethereum-pool/storage"
+	"github.com/CoinPoolServices/open-ethereum-pool/util"
 )
 
 type ApiConfig struct {

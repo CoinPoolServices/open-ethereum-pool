@@ -1,11 +1,11 @@
 package proxy
 
 import (
-	"github.com/techievee/ethash-mining-pool/api"
-	"github.com/techievee/ethash-mining-pool/exchange"
-	"github.com/techievee/ethash-mining-pool/payouts"
-	"github.com/techievee/ethash-mining-pool/policy"
-	"github.com/techievee/ethash-mining-pool/storage"
+	"github.com/CoinPoolServices/open-ethereum-pool/api"
+	"github.com/CoinPoolServices/open-ethereum-pool/exchange"
+	"github.com/CoinPoolServices/open-ethereum-pool/payouts"
+	"github.com/CoinPoolServices/open-ethereum-pool/policy"
+	"github.com/CoinPoolServices/open-ethereum-pool/storage"
 )
 
 type Config struct {
