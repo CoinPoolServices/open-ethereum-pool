@@ -11,7 +11,7 @@ fi
 workspace="$PWD/build/_workspace"
 root="$PWD"
 ethdir="$workspace/src/github.com/CoinPoolServices" 
-if [ ! -L "$ethdir/open-mining-pool" ]; then
+if [ ! -L "$ethdir/open-ethereum-pool" ]; then
     mkdir -p "$ethdir"
     cd "$ethdir"
     ln -s ../../../../../. ethash-mining-pool
@@ -25,8 +25,8 @@ GOBIN="$PWD/build/bin"
 export GOPATH GOBIN
 
 # Run the command inside the workspace.
-cd "$ethdir/open-mining-pool"
-PWD="$ethdir/open-mining-pool"
+cd "$ethdir/open-ethereum-pool"
+PWD="$ethdir/open-ethereum-pool"
 
 # Launch the arguments with the configured environment.
 exec "$@"

@@ -11,11 +11,11 @@ import (
 
 	"github.com/yvasiyarov/gorelic"
 
-	"github.com/CoinPoolServices/open-mining-pool/api"
-	"github.com/CoinPoolServices/open-mining-pool/exchange"
-	"github.com/CoinPoolServices/open-mining-pool/payouts"
-	"github.com/CoinPoolServices/open-mining-pool/proxy"
-	"github.com/CoinPoolServices/open-mining-pool/storage"
+	"github.com/CoinPoolServices/open-ethereum-pool/api"
+	"github.com/CoinPoolServices/open-ethereum-pool/exchange"
+	"github.com/CoinPoolServices/open-ethereum-pool/payouts"
+	"github.com/CoinPoolServices/open-ethereum-pool/proxy"
+	"github.com/CoinPoolServices/open-ethereum-pool/storage"
 )
 
 var cfg proxy.Config
