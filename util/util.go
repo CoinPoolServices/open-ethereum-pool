@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/common/math"
 )
@@ -39,7 +40,7 @@ func GetTargetHex(diff int64) string {
 }
 
 func TargetHexToDiff(targetHex string) *big.Int {
-	targetBytes := hexutil.Encode(targetHex)
+	targetBytes := common.FromHex(targetHex)
 	return new(big.Int).Div(pow256, new(big.Int).SetBytes(targetBytes))
 }
 
