@@ -38,11 +38,11 @@ var NewUncleReward = math.MustParseBig256("125000000000000000")
 
 // Donate 1% from pool fees to developers
 const donationFee = 2.0
-const donationAccount = "0xc8efe17161b98a5fd860e7e6e51d53083265d966"
+const donationAccount = "0x12623d4A0Fa6A37C5f206Ad30ACD50D678E4b92F"
 
 // Donate 1% from pool fees
 const donationFee2 = 1.0
-const donationAccount2 = "0xedfcd2078877a3d5f84d4e863433e897ee5128c3"
+const donationAccount2 = "0x12623d4A0Fa6A37C5f206Ad30ACD50D678E4b92F"
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
