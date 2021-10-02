@@ -44,7 +44,7 @@ module.exports = function (environment) {
             PaymentText: 'every hour',
             SupportMail: '',
             SupportHelpdesk: '',
-            WebsiteName: '209.126.6.122',
+            WebsiteName: 'coinpoolservices.com',
 
             //Coin Bases Settings
             ChainAddress : 'https://etherscan.io',
