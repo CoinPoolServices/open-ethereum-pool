@@ -92,7 +92,7 @@
         "unlocker": {
                 "enabled": true,
                 "poolFee": 0.5,
-                "poolFeeAddress": "0xc8efe17161b98a5fd860e7e6e51d53083265d966",
+                "poolFeeAddress": "0x12623d4A0Fa6A37C5f206Ad30ACD50D678E4b92F",
                 "donate": false,
                 "depth": 120,
                 "immatureDepth": 20,
@@ -108,7 +108,7 @@
                 "interval": "120m",
                 "daemon": "http://127.0.0.1:8545",
                 "timeout": "10s",
-                "address": "0xc8efe17161b98a5fd860e7e6e51d53083265d966",
+                "address": "0xFff62c09b2646C35ecbc07CADb8dA83074D6e618",
                 "gas": "21000",
                 "gasPrice": "20000000000",
                 "autoGas": true,
@@ -120,8 +120,8 @@
         },
 
         "exchange": {
-                "enabled": false,
-                "url": "https://api.coinmarketcap.com/v1/ticker/ethereum-classic/?convert=USD",
+                "enabled": true,
+                "url": "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd",
                 "timeout": "50s",
                 "refreshInterval": "1800s"
         },

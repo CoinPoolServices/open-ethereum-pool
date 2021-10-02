@@ -11,12 +11,12 @@ Geth setup:
     Always make sure you are running the most current release from https://github.com/multi-geth/multi-geth/releases
 
     ```
-    sudo su &&
-    mkdir /pool && cd /pool &&
-    wget https://github.com/multi-geth/multi-geth/releases/download/v1.9.21/multi-geth-linux.zip &&
-    unzip multi-geth-linux.zip &&
-    ln -s /pool/geth /usr/bin/geth &&
-    chmod ugo+x /usr/bin/geth &&
+    sudo su
+    mkdir /pool && cd /pool
+    wget https://github.com/multi-geth/multi-geth/releases/download/v1.9.20/multi-geth-linux.zip
+    unzip multi-geth-linux.zip
+    ln -s /pool/geth /usr/bin/geth
+    chmod ugo+x /usr/bin/geth
     ```
     
     If you are wanting to run a ETC (Ethereum Classic) Client run below commands for generating a new account in GETH.
@@ -51,7 +51,7 @@ Create geth start script:
 
     ```
     #!/bin/bash
-    screen -S server geth --classic --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --etherbase "YOUR_WALLET" --cache=12288 --mine --unlock "YOUR_WALLET" --allow-insecure-unlock --password /pool/pwd
+    screen -S server geth --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --etherbase "YOUR_WALLET" --cache=12288 --mine --unlock "YOUR_WALLET" --allow-insecure-unlock --password /pool/pwd
     ```
 
 Enter wallet password to the file: 
@@ -135,3 +135,20 @@ Then run this commands:
     systemctl enable nginx.service && systemctl stop nginx.service && systemctl start nginx.service
     screen -S pool ./build/bin/open-ethereum-pool config_api.json
     
+
+
+
+
+    Saved required for my instance depends.
+sudo apt install gawk
+
+
+wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/glibc/2.29-0ubuntu2/glibc_2.29.orig.tar.xz
+tar -xf glibc_2.29.orig.tar.xz
+cd glibc-2.29
+mkdir build
+cd build
+export glibc_install="$(pwd)/install"
+../configure --prefix "$glibc_install"
+make -j `nproc`
+make install -j `nproc`

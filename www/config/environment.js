@@ -15,42 +15,42 @@ module.exports = function (environment) {
 
         APP: {
             // API host and port
-            ApiUrl: '//192.168.0.200/',
+            ApiUrl: '//209.126.6.122/',
 
             // HTTP mining endpoint
-            HttpHost: '192.168.0.200',
+            HttpHost: '209.126.6.122',
             HttpPort: 40002,
 
             // Stratum mining endpoint
-            StratumHost: '192.168.0.200',
+            StratumHost: '209.126.6.122',
             StratumPort: 9009,
 
             // Stratum SSL mining endpoint
-            StratumHost1: '192.168.0.200',
+            StratumHost1: '209.126.6.122',
             StratumPort1: 8008,
 
             NicehashHost: '',
             NicehashPost: 40004,
 
             // Fee and payout details
-            PoolFee: '0.5%',
-            PayoutThreshold: '0.5',
+            PoolFee: '0.01%',
+            PayoutThreshold: '0.01',
             ShareDifficulty: '4000000000',
 
             //Current and Localization
             Currency: 'USD',
-            CoinName: 'Ethereum Classic',
-            CoinShortName: 'ETC',
+            CoinName: 'Ethereum',
+            CoinShortName: 'ETH',
             PaymentText: 'every hour',
             SupportMail: '',
             SupportHelpdesk: '',
-            WebsiteName: '192.168.0.200',
+            WebsiteName: '209.126.6.122',
 
             //Coin Bases Settings
-            ChainAddress : 'https://etcblockexplorer.com/addr/',
-	        TransactionAddress : 'https://minergate.com/blockchain/etc/transaction/',
-            UncleAddress : 'https://minergate.com/blockchain/etc/block/',
-            BlockAddress : 'https://minergate.com/blockchain/etc/block/',
+            ChainAddress : 'https://etherscan.io',
+	        TransactionAddress : 'https://etherscan.io/txs',
+            UncleAddress : 'https://etherscan.io/uncles',
+            BlockAddress : 'https://etherscan.io/blocks',
 
             //Twitter Parameter
             TwitterURL: '',
@@ -58,7 +58,7 @@ module.exports = function (environment) {
 
 
             // For network hashrate (change for your favourite fork)
-            BlockTime: 14
+            BlockTime: 60
         }
     };
 
@@ -93,7 +93,7 @@ module.exports = function (environment) {
         'script-src': [
             "'self'",
             'https://syndication.twitter.com',
-			            'https://cdn.syndication.twimg.com',
+			 'https://cdn.syndication.twimg.com',
             "'sha256-XnNQECY9o-nIv2Qgcd1A39YarwxTm10rhdzegH_JBxY='"],
         'style-src': [
             "'self'",
