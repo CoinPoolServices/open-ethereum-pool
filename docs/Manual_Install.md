@@ -8,28 +8,25 @@ Dependencies:
 
 
 Geth setup:
-    Always make sure you are running the most current release from https://github.com/multi-geth/multi-geth/releases
+    Always make sure you are running the most current release from https://geth.ethereum.org/downloads/
 
-    ```
     sudo su
     mkdir /pool && cd /pool
-    wget https://github.com/multi-geth/multi-geth/releases/download/v1.9.20/multi-geth-linux.zip
-    unzip multi-geth-linux.zip
+    wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.9-eae3b194.tar.gz
+    tar -xf https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.9-eae3b194.tar.gz
+    cd geth-linux-amd64-1.10.9-eae3b194
+    mv geth /pool/
+    cd ..
+    rm -rf geth-linux-amd64-1.10.9-eae3b194
+    rm -rf geth-linux-amd64-1.10.9-eae3b194.tar.gz
     ln -s /pool/geth /usr/bin/geth
     chmod ugo+x /usr/bin/geth
-    ```
-    
-    If you are wanting to run a ETC (Ethereum Classic) Client run below commands for generating a new account in GETH.
-    ```
-    geth --classic account new
-    geth --classic account list
-    ```
 
-    If you are wanting to run a ETH (Ethereum) Client run the below commands for generating a new account in GETH.
-    ```
+    
+    Run the below commands for generating a new account in GETH.
+
     geth account new
     geth account list
-    ```
 
 example output:
 
@@ -51,7 +48,7 @@ Create geth start script:
 
     ```
     #!/bin/bash
-    screen -S server geth --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --etherbase "YOUR_WALLET" --cache=12288 --mine --unlock "YOUR_WALLET" --allow-insecure-unlock --password /pool/pwd
+    screen -S server geth --http --maxpeers 75 --syncmode "fast" --http.api "eth,net,web3,personal" --miner.etherbase "YOUR_WALLET" --cache=12288 --mine --unlock "YOUR_WALLET" --allow-insecure-unlock --password /pool/pwd
     ```
 
 Enter wallet password to the file: 

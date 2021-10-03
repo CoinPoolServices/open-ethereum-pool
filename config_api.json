@@ -91,7 +91,7 @@
 
         "unlocker": {
                 "enabled": true,
-                "poolFee": 0.5,
+                "poolFee": 1,
                 "poolFeeAddress": "0x12623d4A0Fa6A37C5f206Ad30ACD50D678E4b92F",
                 "donate": false,
                 "depth": 120,
@@ -120,7 +120,7 @@
         },
 
         "exchange": {
-                "enabled": true,
+                "enabled": false,
                 "url": "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd",
                 "timeout": "50s",
                 "refreshInterval": "1800s"
