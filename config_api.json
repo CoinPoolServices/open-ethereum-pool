@@ -6,7 +6,7 @@
         "coin-name":"ETH",
 
         "proxy": {
-                "enabled": true,
+                "enabled": false, //Was true
                 "listen": "0.0.0.0:40002",
                 "limitHeadersSize": 1024,
                 "limitBodySize": 256,
@@ -20,14 +20,14 @@
                 "healthCheck": true,
                 "maxFails": 100,
 
-                "stratum": {
-                        "enabled": true,
+                "stratum": { 
+                        "enabled": false, //Was true
                         "listen": "0.0.0.0:9009",
                         "timeout": "120s",
                         "maxConn": 8192
                 },
                 "stratum_nice_hash": {
-                        "enabled": true,
+                        "enabled": false, //Was true
                         "listen": "0.0.0.0:40004",
                         "timeout": "120s",
                         "maxConn": 8192
@@ -56,7 +56,7 @@
         },
 
         "api": {
-                "enabled": true,
+                "enabled": false, //Was true
                 "purgeOnly": false,
                 "purgeInterval": "10m",
                 "listen": "0.0.0.0:9091",
