@@ -13,7 +13,7 @@ Geth setup:
     sudo su
     mkdir /pool && cd /pool
     wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.9-eae3b194.tar.gz
-    tar -xf https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.9-eae3b194.tar.gz
+    tar -xf geth-linux-amd64-1.10.9-eae3b194.tar.gz
     cd geth-linux-amd64-1.10.9-eae3b194
     mv geth /pool/
     cd ..
