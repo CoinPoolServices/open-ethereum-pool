@@ -9,7 +9,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/coinpoolservices/open-ethereum-pool/util"
+	"github.com/CoinPoolServices/open-ethereum-pool/util"
 	"math/rand"
 	"strings"
 )
