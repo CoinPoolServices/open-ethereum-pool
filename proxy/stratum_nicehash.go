@@ -108,7 +108,7 @@ func generateRandomString(strlen int) string {
 	return string(result)
 }
 
-func(cs *Session) getNotificationResponse(s *ProxyServer, id json.RawMessage) JSONRpcResp {
+func(cs *Session) getNotificationResponse(s *ProxyServer, id *json.RawMessage) JSONRpcResp {
 	if s.Extranonce == ""{
 		s.Extranonce = generateRandomString(6)
 	}
