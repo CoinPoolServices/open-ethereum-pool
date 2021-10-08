@@ -22,13 +22,13 @@
 
                 "stratum": { 
                         "enabled": false,
-                        "listen": "0.0.0.0:8008",
+                        "listen": "209.126.6.122:8008",
                         "timeout": "120s",
                         "maxConn": 8192
                 },
                 "stratum_nice_hash": {
                         "enabled": false,
-                        "listen": "0.0.0.0:40004",
+                        "listen": "209.126.6.122:40004",
                         "timeout": "120s",
                         "maxConn": 8192
                 },
@@ -59,7 +59,7 @@
                 "enabled": false,
                 "purgeOnly": false,
                 "purgeInterval": "10m",
-                "listen": "0.0.0.0:9091",
+                "listen": "209.126.6.122:9091",
                 "statsCollectInterval": "5s",
                 "hashrateWindow": "30m",
                 "hashrateLargeWindow": "3h",
