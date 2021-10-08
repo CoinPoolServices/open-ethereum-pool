@@ -6,7 +6,7 @@
         "coin-name":"ETH",
 
         "proxy": {
-                "enabled": false,
+                "enabled": true,
                 "listen": "0.0.0.0:40002",
                 "limitHeadersSize": 1024,
                 "limitBodySize": 256,
@@ -17,18 +17,18 @@
                 "DifficultyNiceHash": 4,
                 "hashrateExpiration": "3h",
 
-                "healthCheck": false,
+                "healthCheck": true,
                 "maxFails": 100,
 
                 "stratum": { 
-                        "enabled": false,
-                        "listen": "209.126.6.122:8008",
+                        "enabled": true,
+                        "listen": "0.0.0.0:8008",
                         "timeout": "120s",
                         "maxConn": 8192
                 },
                 "stratum_nice_hash": {
-                        "enabled": false,
-                        "listen": "209.126.6.122:40004",
+                        "enabled": true,
+                        "listen": "0.0.0.0:40004",
                         "timeout": "120s",
                         "maxConn": 8192
                 },
@@ -39,7 +39,7 @@
                         "refreshInterval": "1m",
 
                         "banning": {
-                                "enabled": false,
+                                "enabled": true,
                                 "ipset": "blacklist",
                                 "timeout": 300,
                                 "invalidPercent": 30,
@@ -47,7 +47,7 @@
                                 "malformedLimit": 50
                         },
                         "limits": {
-                                "enabled": false,
+                                "enabled": true,
                                 "limit": 30,
                                 "grace": "5m",
                                 "limitJump": 10
@@ -56,7 +56,7 @@
         },
 
         "api": {
-                "enabled": true,
+                "enabled": false,
                 "purgeOnly": false,
                 "purgeInterval": "10m",
                 "listen": "0.0.0.0:9091",
@@ -121,7 +121,7 @@
 
         "exchange": {
                 "enabled": false,
-                "url": "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd",
+                "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum",
                 "timeout": "50s",
                 "refreshInterval": "1800s"
         },

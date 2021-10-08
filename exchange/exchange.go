@@ -37,7 +37,7 @@ type RestClient struct {
 	client      *http.Client
 }
 
-type ExchangeReply []map[string]string
+type ExchangeReply []map[string]interface{}
 
 func NewRestClient(name, url, timeout string) *RestClient {
 	restClient := &RestClient{Name: name, Url: url}

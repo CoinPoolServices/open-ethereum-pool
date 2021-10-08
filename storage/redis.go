@@ -1312,24 +1312,26 @@ func convertPaymentsResults(raw *redis.ZSliceCmd) []map[string]interface{} {
 	return result
 }
 
-func (r *RedisClient) StoreExchangeData(ExchangeData []map[string]string) {
+func (r *RedisClient) StoreExchangeData(ExchangeData []map[string]interface{}) {
 
-	tx := r.client.Multi()
-	defer tx.Close()
+        tx := r.client.Multi()
+        defer tx.Close()
 
-	for _, coindata := range ExchangeData {
-		for key, value := range coindata {
+        log.Printf("ExchangeData: %s", ExchangeData)
 
-			cmd := tx.HSet(r.formatKey("exchange", coindata["symbol"]), key, value)
-			err := cmd.Err()
-			if err != nil {
-				log.Printf("Error while Storing %s : Key-%s , value-%s , Error : %v", coindata["symbol"], key, value, err)
-			}
+        for _, coindata := range ExchangeData {
+                for key, value := range coindata {
 
-		}
-	}
-	log.Printf("Writing Exchange Data ")
-	return
+                        cmd := tx.HSet(r.formatKey("exchange", coindata["symbol"]), fmt.Sprintf("%v", key), fmt.Sprintf("%v", value))
+                        err := cmd.Err()
+                        if err != nil {
+                                log.Printf("Error while Storing %s : Key-%s , value-%s , Error : %v", coindata["symbol"], key, value, err) 
+                        }
+
+                }
+        }
+        log.Printf("Writing Exchange Data ")
+        return
 }
 
 func (r *RedisClient) GetExchangeData(coinsymbol string) (map[string]string, error) {

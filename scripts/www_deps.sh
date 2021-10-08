@@ -1,5 +1,15 @@
 #!/bin/bash
 
+apt-get update; apt-get install libgnutls30
+sudo apt-get install -y nodejs
+sudo apt-get update && sudo apt-get install yarn
+curl -sL https://deb.nodesource.com/setup_14.x | bash -
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+apt update
+apt install nodejs yarn
+
 sudo npm install -g ember-cli@2.9.1
 sudo npm install -g bower
 sudo npm install fsevents@latest -f --save-optional
