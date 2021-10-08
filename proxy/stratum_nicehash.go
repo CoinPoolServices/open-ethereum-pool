@@ -185,20 +185,6 @@ func (cs *Session) sendJob(s *ProxyServer, id json.RawMessage) error {
 func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 	// Handle RPC methods
 	switch req.Method {
-
-	case "eth_submitLogin":
-		var params []string
-		err := json.Unmarshal(req.Params, &params)
-		if err != nil {
-			log.Println("Malformed stratum request params from", cs.ip)
-			return err
-		}
-		reply, errReply := s.handleLoginRPC(cs, params, req.Worker)
-		if errReply != nil {
-			return cs.sendTCPError(req.Id, errReply)
-		}
-		return cs.sendTCPResult(req.Id, reply)
-
 	case "mining.subscribe":
 		var params []string
 		err := json.Unmarshal(req.Params, &params)
@@ -211,7 +197,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			log.Println("Unsupported stratum version from ", cs.ip)
 			return cs.sendTCPNHError(req.Id, "unsupported ethereum version")
 		}
-		cs.ExtranonceSub = true
+
 		resp := cs.getNotificationResponse(s, req.Id)
 		return cs.sendTCPNHResult(resp)
 
@@ -258,10 +244,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return cs.sendTCPNHError(req.Id, "wrong job id")
 		}
 
-			// check Extranonce subscription.
-			extranonce := cs.Extranonce
-			if !cs.ExtranonceSub { extranonce = "" }
-			nonce := extranonce + params[2]
+		nonce := s.Extranonce + randstr.Hex(3)
 
 		params = []string{
 			nonce,
@@ -286,14 +269,24 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 		}
 
 		return cs.sendJob(s, req.Id)
-
+	case "eth_submitLogin":
+		var params []string
+		err := json.Unmarshal(req.Params, &params)
+		if err != nil {
+			log.Println("Malformed stratum request params from", cs.ip)
+			return err
+		}
+		reply, errReply := s.handleLoginRPC(cs, params, req.Worker)
+		if errReply != nil {
+			return cs.sendTCPError(req.Id, errReply)
+		}
+		return cs.sendTCPResult(req.Id, reply)
 	case "eth_getWork":
 		reply, errReply := s.handleGetWorkRPC(cs)
 		if errReply != nil {
 			return cs.sendTCPError(req.Id, errReply)
 		}
 		return cs.sendTCPResult(req.Id, &reply)
-
 	case "eth_submitWork":
 		var params []string
 		err := json.Unmarshal(req.Params, &params)
@@ -306,7 +299,6 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return cs.sendTCPError(req.Id, errReply)
 		}
 		return cs.sendTCPResult(req.Id, &reply)
-
 	case "eth_submitHashrate":
 		return cs.sendTCPResult(req.Id, true)
 	default:
