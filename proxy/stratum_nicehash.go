@@ -242,7 +242,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 		if cs.JobDeatils.JobID != params[1] {
 			return cs.sendTCPNHError(req.Id, "wrong job id")
 		}
-		nonce := s.Extranonce + params[2]
+		nonce := s.Extranonce + params[3]
 
 		params = []string{
 			nonce,
