@@ -7,7 +7,7 @@
 
         "proxy": {
                 "enabled": false,
-                "listen": "209.126.6.122:40002",
+                "listen": "0.0.0.0:40002",
                 "limitHeadersSize": 1024,
                 "limitBodySize": 256,
                 "behindReverseProxy": false,
@@ -59,7 +59,7 @@
                 "enabled": true,
                 "purgeOnly": false,
                 "purgeInterval": "10m",
-                "listen": "209.126.6.122:9091",
+                "listen": "0.0.0.0:9091",
                 "statsCollectInterval": "5s",
                 "hashrateWindow": "30m",
                 "hashrateLargeWindow": "3h",

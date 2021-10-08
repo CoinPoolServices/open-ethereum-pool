@@ -15,3 +15,6 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 source ~/.profile
 make
+cd www
+npm install
+./build.sh
