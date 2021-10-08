@@ -19,3 +19,5 @@ cd ..
 cd www
 npm install
 ./build.sh
+cd ..
+sudo chmod -R 755 scripts
