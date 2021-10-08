@@ -244,7 +244,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return cs.sendTCPNHError(req.Id, "wrong job id")
 		}
 
-		nonce := s.Extranonce + randstr.Hex(2)
+		nonce := s.Extranonce + randstr.Hex(3)
 
 		params = []string{
 			nonce,
