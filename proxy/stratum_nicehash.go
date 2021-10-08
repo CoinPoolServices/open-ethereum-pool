@@ -114,7 +114,7 @@ func (cs *Session) getNotificationResponse(s *ProxyServer, id json.RawMessage) J
 	}
 
 	result := make([]interface{}, 2)
-	param1 := make([]string, 3)
+	param1 := make([]string, 2)
 	param1[0] = "mining.notify"
 	param1[1] = generateRandomString(32)
 	param1[2] = "EthereumStratum/1.0.0"
@@ -242,7 +242,7 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 		if cs.JobDeatils.JobID != params[1] {
 			return cs.sendTCPNHError(req.Id, "wrong job id")
 		}
-		nonce := s.Extranonce + params[3]
+		nonce := s.Extranonce + params[2]
 
 		params = []string{
 			nonce,
